@@ -1,4 +1,4 @@
-#
+#!/bin/sh
 apt-get install guacamole
 apt-get install tomcat8 -y
 apt-get install libguac-client-ssh0 libguac-client-rdp0 libguac-client-vnc0
