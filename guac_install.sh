@@ -11,13 +11,13 @@ sudo mkdir /etc/guacamole
 sudo mkdir /usr/share/tomcat8/.guacamole
 
  
-cat >  /etc/guacamole/guacamole.properties << EOG
+cat >  /etc/guacamole/guacamole.properties << EOF
 guacd-hostname: localhost
 guacd-port: 4822
 user-mapping: /etc/guacamole/user-mapping.xml
 auth-provider: net.sourceforge.guacamole.net.basic.BasicFileAuthenticationProvider
 basic-user-mapping: /etc/guacamole/user-mapping.xml
-EOG
+EOF
 
 ln -s /etc/guacamole/guacamole.properties /usr/share/tomcat8/.guacamole/
 echo "" > /etc/guacamole/user-mapping.xml
