@@ -9,13 +9,16 @@ mv guacamole-0.9.14.war guacamole.war
 sudo cp guacamole.war /var/lib/tomcat8/webapps
 sudo mkdir /etc/guacamole
 sudo mkdir /usr/share/tomcat8/.guacamole
-echo "
+
+ 
+cat >  /etc/guacamole/guacamole.properties << EOG
 guacd-hostname: localhost
 guacd-port: 4822
 user-mapping: /etc/guacamole/user-mapping.xml
 auth-provider: net.sourceforge.guacamole.net.basic.BasicFileAuthenticationProvider
 basic-user-mapping: /etc/guacamole/user-mapping.xml
-" > /etc/guacamole/guacamole.properties
+EOG
+
 ln -s /etc/guacamole/guacamole.properties /usr/share/tomcat8/.guacamole/
 echo "" > /etc/guacamole/user-mapping.xml
 chmod 600 /etc/guacamole/user-mapping.xml
