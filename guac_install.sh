@@ -1,4 +1,6 @@
 #!/bin/sh
+# Check if user is root or sudo
+if ! [ $(id -u) = 0 ]; then echo "Please run this script as sudo or root"; exit 1 ; fi
 apt-get install guacamole
 apt-get install tomcat8 -y
 apt-get install libguac-client-ssh0 libguac-client-rdp0 libguac-client-vnc0
